@@ -1,10 +1,8 @@
 package com.example.vuongvanhau.a2048;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
@@ -12,19 +10,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.media.MediaPlayer;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
-import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -205,7 +200,7 @@ public class Main extends AppCompatActivity {
         }
         catch (Exception ex)
         {
-            Toast.makeText(getApplicationContext(),"Lỗi "+ex.getMessage(), Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(),"Error "+ex.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -342,7 +337,7 @@ public class Main extends AppCompatActivity {
                 }
             }
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(),"Lỗi "+e.getMessage(),Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(),"Lỗi "+e.getMessage(),Toast.LENGTH_LONG).show();
             dg =false;
         }
 
@@ -409,7 +404,7 @@ public class Main extends AppCompatActivity {
         }
         catch (Exception ex)
         {
-            Toast.makeText(getApplicationContext(), "Lỗi "+ ex.getMessage(),Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), "Lỗi "+ ex.getMessage(),Toast.LENGTH_LONG).show();
         }
     }
 
@@ -749,7 +744,6 @@ public class Main extends AppCompatActivity {
                         .setTitle(R.string.reset_dialog_title)
                         .setMessage(R.string.reset_dialog_message)
                         .show();
-
             }
         }
         catch (Exception ex)
@@ -792,7 +786,7 @@ public class Main extends AppCompatActivity {
         }
         catch (Exception ex)
         {
-
+            //
         }
     }
 
@@ -843,7 +837,7 @@ public class Main extends AppCompatActivity {
         }
         catch(Exception ex)
         {
-            Toast.makeText(getApplicationContext(), "Lỗi "+ ex.getMessage(), Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), "Lỗi "+ ex.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -862,7 +856,7 @@ public class Main extends AppCompatActivity {
         }
         catch (Exception ex)
         {
-            Toast.makeText(getApplicationContext(), "Lỗi "+ ex.getMessage(), Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), "Lỗi "+ ex.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -905,7 +899,7 @@ public class Main extends AppCompatActivity {
         }
         catch(Exception ex)
         {
-
+            //
         }
     }
     class UpdateSeekBarThread implements Runnable {
@@ -924,7 +918,7 @@ public class Main extends AppCompatActivity {
             if(icon == 0)
             {
                 icon = 1;
-                imageicon.setBackgroundResource(R.drawable.game1);
+                imageicon.setBackgroundResource(R.drawable.game3);
             }
             else if (icon == 1)
             {
@@ -934,7 +928,7 @@ public class Main extends AppCompatActivity {
             else if (icon == 2)
             {
                 icon = 3;
-                imageicon.setBackgroundResource(R.drawable.game3);
+                imageicon.setBackgroundResource(R.drawable.game1);
             }
             else if (icon == 3)
             {
@@ -1012,7 +1006,7 @@ public class Main extends AppCompatActivity {
         }
         catch (Exception ex)
         {
-            Toast.makeText(getApplicationContext(),"Lỗi "+ ex.getMessage(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),ex.getMessage(),Toast.LENGTH_LONG).show();
         }
     }
     protected void setting_click()
@@ -1024,7 +1018,7 @@ public class Main extends AppCompatActivity {
         }
         catch (Exception ex)
         {
-            Toast.makeText(getApplicationContext(),"Lỗi "+ ex.getMessage(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),ex.getMessage(),Toast.LENGTH_LONG).show();
         }
     }
     protected void repeat_click()
@@ -1085,15 +1079,15 @@ public class Main extends AppCompatActivity {
 
     protected  void reset_click(){
         AlertDialog dialog = new AlertDialog.Builder(Main.this,R.style.Theme_AppCompat_Light_Dialog)
-                .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.reset, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        newgame();
+                    public void onClick(DialogInterface dialog, int which) { newgame();
                     }
                 })
-                .setNegativeButton("NO", null)
-                .setTitle("RESET")
-                .setMessage("You want reset game!")
+                .setNegativeButton(R.string.continue_game, null)
+                .setTitle(R.string.reset_dialog_title)
+                .setMessage(R.string.reset_dialog_message)
                 .show();
     }
+
 }
