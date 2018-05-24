@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context="com.example.vuongvanhau.a2048.MusicClass">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center">
+        <Button
+            android:id="@+id/colorbackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:text="ADD"
+            android:textColor="@color/text_white"
+            android:background="@color/text_black"/>
+
+        <Button
+            android:id="@+id/help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:text="HELP"
+            android:textColor="@color/text_white"
+            android:background="@color/text_black"/>
+
+
+    </LinearLayout>
+</LinearLayout>
